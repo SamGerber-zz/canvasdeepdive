@@ -15,8 +15,15 @@
       var c = canvas.getContext('2d');
 
       // draw
-      c.fillstyle = "gray";
+      c.fillStyle = "gray";
       c.fillRect(0,0,500,500);
+
+      // draw data
+      c.fillStyle = "blue";
+      for (var i = 0; i < data.length; i++) {
+        var dp = data[i];
+        c.fillRect(25 + i*100, 30, 50, dp*5);
+      }
     </script>
   </body>
 </html>
