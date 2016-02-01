@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
+      var data = [16, 68, 20, 30, 54];
+      // get a reference to the canvas
+      var canvas = document.getElementById('canvas');
+
+      // get a reference to the drawing context
+      var c = canvas.getContext('2d');
+
+      // draw
+      c.fillstyle = "gray";
+      c.fillRect(0,0,500,500);
+    </script>
+  </body>
+</html>
