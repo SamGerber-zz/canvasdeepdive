@@ -8,7 +8,7 @@
     <canvas id="canvas" width="500" height="500"></canvas>
     <script type="text/javascript">
       // initialize data set
-      var data = [100, 68, 20, 30, 100];
+      var data = [100, 68, 20, 30, 100, 45, 12, 32, 88, 92, 21, 80];
 
       // get a reference to the canvas
       var canvas = document.getElementById('canvas');
@@ -21,7 +21,7 @@
       c.fillRect(0,0,500,500);
 
       // a list of colors;
-      var colors = ["orange", "green", "blue", "yellow", "teal"];
+      var colors = ["orange", "green", "blue", "yellow", "teal", "purple", "olive", "maroon", "silver", "chocolate", "coral", "crimson", "darkblue"];
 
       // calculate total of all data
       var total = 0;
@@ -37,8 +37,11 @@
         // calc starting angle
         var angle = prevAngle + fraction*Math.PI*2;
 
-        // draw the pie slice
-        c.fillStyle = colors[i];
+        // fill with a radial gradient
+        var grad = c.createRadialGradient(250,250,10,250,250,100);
+        grad.addColorStop(0,"white");
+        grad.addColorStop(1,colors[i % colors.length]);
+        c.fillStyle = grad;
 
         // create the path
         c.beginPath();
@@ -55,6 +58,13 @@
 
         // update for the next time through the loop
         prevAngle = angle;
+
+        // draw centered text
+        c.fillStyle = "black";
+        c.font = "24pt sans-serif";
+        var text = "Sales Data from 2025";
+        var metrics = c.measureText(text);
+        c.fillText(text, 250-metrics.width/2, 400);
       }
     </script>
   </body>
