@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
+    var data = [100, 68, 20, 30, 100, 45, 12, 32, 88, 92, 21, 80];
+      // get a reference to the canvas
+      var canvas = document.getElementById('canvas');
+
+      // get a reference to the drawing context
+      var c = canvas.getContext('2d');
+
+      // draw
+      c.fillStyle = "white";
+      c.fillRect(0,0,500,500);
+
+      // draw data
+      c.fillStyle = "maroon";
+      for (var i = 0; i < data.length; i++) {
+        var dp = data[i];
+        c.beginPath();
+        c.moveTo(40 + i*40, 460-dp*4);
+        c.arc(40 + i*40, 460-dp*4,3, 0, 2*Math.PI, true);
+        c.fill();
+      }
+
+      // connect data
+      c.fillStyle = "black";
+      c.lineWidth = 2.0;
+      c.beginPath();
+      c.moveTo(40, 460-data[0]*4);
+      for (var i = 1; i < data.length; i++) {
+        var dp = data[i];
+        c.lineTo(40 + i*40, 460-dp*4);
+      }
+      c.stroke();
+
+      // draw axis lines
+      c.fillStyle = "black";
+      c.lineWidth = 2.0;
+      c.beginPath();
+      c.moveTo(30,10);
+      c.lineTo(30,460);
+      c.lineTo(490,460);
+      c.stroke();
+
+      // draw text and vertical lines
+      c.fillStyle = "black";
+      for (var i = 0; i < 6; i++) {
+        c.fillText((5-i)*20 + "",4,i*80+60);
+        c.beginPath();
+        c.moveTo(25,i*80+60);
+        c.lineTo(30,i*80+60);
+        c.stroke();
+      }
+
+      // draw axis labels
+      var labels = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+      // draw horizontal text
+      for (var i = 0; i < labels.length; i++) {
+        c.fillText(labels[i], 40+ i*40, 475);
+      }
+    </script>
+  </body>
+</html>
