@@ -7,7 +7,7 @@
   <body>
     <canvas id="canvas" width="500" height="500"></canvas>
     <script type="text/javascript">
-      var data = [16, 68, 20, 30, 54];
+    var data = [100, 68, 20, 30, 100, 45, 12, 32, 88, 92, 21, 80];
       // get a reference to the canvas
       var canvas = document.getElementById('canvas');
 
@@ -22,7 +22,7 @@
       c.fillStyle = "blue";
       for (var i = 0; i < data.length; i++) {
         var dp = data[i];
-        c.fillRect(40 + i*100, 460-dp*5, 50, dp*5);
+        c.fillRect(40 + i*40, 460-dp*4, 20, dp*4);
       }
 
       // draw axis lines
@@ -45,10 +45,10 @@
       }
 
       // draw axis labels
-      var labels = ["JAN", "FEB", "MAR", "APR", "MAY"];
+      var labels = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
       // draw horizontal text
       for (var i = 0; i < labels.length; i++) {
-        c.fillText(labels[i], 50+ i*100, 475);
+        c.fillText(labels[i], 40+ i*40, 475);
       }
     </script>
   </body>
