@@ -24,7 +24,7 @@
       c.fillRect(0,0,500,500);
 
       // a list of colors;
-      var colors = ["orange", "green", "blue", "yellow", "teal", "purple", "olive", "maroon", "silver", "chocolate", "coral", "crimson", "darkblue"];
+      var colors = ["orange", "green", "blue", "teal", "purple", "olive", "maroon", "silver", "chocolate", "coral", "crimson", "darkblue"];
 
       // calculate total of all data
       var total = 0;
@@ -61,9 +61,11 @@
         c.strokeStyle = "black";
         c.stroke();
 
-        x=230 + 125*Math.cos((angle+prevAngle)/2);
+        x=240 + 125*Math.cos((angle+prevAngle)/2);
         y=250 + 125*Math.sin((angle+prevAngle)/2);
-        c.fillText(labels[i]+": "+data[i], x, y);
+        c.fillText(labels[i], x, y);
+        c.fillStyle = "black";
+        c.fillText(data[i], x, y+12);
 
         // update for the next time through the loop
         prevAngle = angle;
@@ -74,7 +76,7 @@
       c.font = "24pt sans-serif";
       var text = "Sales Data from 2025";
       var metrics = c.measureText(text);
-      c.fillText(text, 250-metrics.width/2, 400);
+      c.fillText(text, 250-metrics.width/2, 420);
     </script>
   </body>
 </html>
