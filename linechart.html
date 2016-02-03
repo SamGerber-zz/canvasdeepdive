@@ -23,8 +23,8 @@
       for (var i = 0; i < data.length; i++) {
         var dp = data[i];
         c.beginPath();
-        c.moveTo(40 + i*40, 460-dp*4);
-        c.arc(40 + i*40, 460-dp*4,3, 0, 2*Math.PI, true);
+        c.moveTo(50 + i*40, 460-dp*4);
+        c.arc(50 + i*40, 460-dp*4,5, 0, 2*Math.PI, true);
         c.fill();
       }
 
@@ -32,10 +32,10 @@
       c.fillStyle = "black";
       c.lineWidth = 2.0;
       c.beginPath();
-      c.moveTo(40, 460-data[0]*4);
+      c.moveTo(50, 460-data[0]*4);
       for (var i = 1; i < data.length; i++) {
         var dp = data[i];
-        c.lineTo(40 + i*40, 460-dp*4);
+        c.lineTo(50 + i*40, 460-dp*4);
       }
       c.stroke();
 
