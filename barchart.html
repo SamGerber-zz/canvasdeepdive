@@ -26,15 +26,17 @@
         grad.addColorStop(0.5,"orange");
         grad.addColorStop(1,"green");
         c.fillStyle = grad;
+        c.lineWidth = 1.0;
         c.beginPath();
-        c.moveTo(40 + i*40, 460);
-        c.lineTo(40 + i*40, 465 - dp*4 );
-        c.arc(45 + i*40,465 - dp*4,5,Math.PI, 1.5*Math.PI, false);
-        c.lineTo(50 + i*40, 460 - dp*4);
-        c.arc(55 + i*40,465 - dp*4,5,1.5*Math.PI, 2*Math.PI, false);
-        c.lineTo(60 + i*40, 460);
-        c.lineTo(40 + i*40, 460);
+        c.moveTo(35 + i*40, 460);
+        c.lineTo(35 + i*40, 465 - dp*4 );
+        c.arc(40 + i*40,465 - dp*4,5,Math.PI, 1.5*Math.PI, false);
+        c.lineTo(45 + i*40, 460 - dp*4);
+        c.arc(50 + i*40,465 - dp*4,5,1.5*Math.PI, 2*Math.PI, false);
+        c.lineTo(55 + i*40, 460);
+        c.lineTo(35 + i*40, 460);
         c.fill();
+        c.stroke();
       }
 
       // draw axis lines
@@ -60,7 +62,7 @@
       var labels = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
       // draw horizontal text
       for (var i = 0; i < labels.length; i++) {
-        c.fillText(labels[i], 40+ i*40, 475);
+        c.fillText(labels[i], 35+ i*40, 475);
       }
     </script>
   </body>
