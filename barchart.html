@@ -19,10 +19,22 @@
       c.fillRect(0,0,500,500);
 
       // draw data
-      c.fillStyle = "blue";
       for (var i = 0; i < data.length; i++) {
         var dp = data[i];
-        c.fillRect(40 + i*40, 460-dp*4, 20, dp*4);
+        var grad = c.createLinearGradient(0,460,0,40);
+        grad.addColorStop(0,"red");
+        grad.addColorStop(0.5,"orange");
+        grad.addColorStop(1,"green");
+        c.fillStyle = grad;
+        c.beginPath();
+        c.moveTo(40 + i*40, 460);
+        c.lineTo(40 + i*40, 465 - dp*4 );
+        c.arc(45 + i*40,465 - dp*4,5,Math.PI, 1.5*Math.PI, false);
+        c.lineTo(50 + i*40, 460 - dp*4);
+        c.arc(55 + i*40,465 - dp*4,5,1.5*Math.PI, 2*Math.PI, false);
+        c.lineTo(60 + i*40, 460);
+        c.lineTo(40 + i*40, 460);
+        c.fill();
       }
 
       // draw axis lines
@@ -31,7 +43,7 @@
       c.beginPath();
       c.moveTo(30,10);
       c.lineTo(30,460);
-      c.lineTo(490,460);
+      c.lineTo(500,460);
       c.stroke();
 
       // draw text and vertical lines
